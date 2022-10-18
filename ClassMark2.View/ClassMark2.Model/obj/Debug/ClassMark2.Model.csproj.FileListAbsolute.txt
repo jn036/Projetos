@@ -1,0 +1,71 @@
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+C:\Users\Lab1\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csprojAssemblyReference.cache
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+C:\Users\Jose\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+F:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csprojAssemblyReference.cache
+F:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+F:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+F:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+F:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csprojAssemblyReference.cache
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+C:\Users\Matheus Rodrigues\Desktop\ClassMark2.View\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+D:\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csprojAssemblyReference.cache
+D:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+D:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+D:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+D:\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll.config
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.dll
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\ClassMark2.Model.pdb
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.dll
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.xml
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csprojAssemblyReference.cache
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CoreCompileInputs.cache
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.csproj.CopyComplete
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.dll
+C:\Users\jrnet\OneDrive\Desktop\ClassMark2.View\ClassMark2.Model\obj\Debug\ClassMark2.Model.pdb

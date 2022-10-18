@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClassMarkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Matricula" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataIngresso" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDCurso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aula">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDMateria" Type="int" Nullable="false" />
+    <Property Name="DataAula" Type="date" Nullable="false" />
+    <Property Name="HorarioInicio" Type="time" Precision="7" Nullable="false" />
+    <Property Name="HorarioFim" Type="time" Precision="7" Nullable="false" />
+    <Property Name="QRCode" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataInicio" Type="date" Nullable="false" />
+    <Property Name="Duracao" Type="int" Nullable="false" />
+    <Property Name="IDCoordenador" Type="int" Nullable="false" />
+    <Property Name="TipoCurso" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Materia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDCurso" Type="int" Nullable="false" />
+    <Property Name="AnoCurso" Type="int" Nullable="false" />
+    <Property Name="IDProfessor" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Presenca">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDAluno" Type="int" Nullable="false" />
+    <Property Name="IDAula" Type="int" Nullable="false" />
+    <Property Name="StatusPresenca" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Professor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Matricula" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataIngresso" Type="date" Nullable="false" />
+    <Property Name="Coordenador" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ClassMark.dbo.NomeProfessor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NomeProfessor">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Curso" />
+      <PropertyRef Name="DataInicio" />
+      <PropertyRef Name="Duracao" />
+      <PropertyRef Name="TipoCurso" />
+      <PropertyRef Name="Nome" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Curso" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataInicio" Type="date" Nullable="false" />
+    <Property Name="Duracao" Type="int" Nullable="false" />
+    <Property Name="TipoCurso" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Aluno_Curso">
+    <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="IDCurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Professor">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="1" />
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="IDCoordenador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Materia_Curso">
+    <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+    <End Role="Materia" Type="Self.Materia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Materia">
+        <PropertyRef Name="IDCurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Materia_Professor">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="1" />
+    <End Role="Materia" Type="Self.Materia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Materia">
+        <PropertyRef Name="IDProfessor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Presenca_Aluno">
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+    <End Role="Presenca" Type="Self.Presenca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Presenca">
+        <PropertyRef Name="IDAluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Presenca_Aula">
+    <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
+    <End Role="Presenca" Type="Self.Presenca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aula">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Presenca">
+        <PropertyRef Name="IDAula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClassMarkModelStoreContainer">
+    <EntitySet Name="Aluno" EntityType="Self.Aluno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aula" EntityType="Self.Aula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Materia" EntityType="Self.Materia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Presenca" EntityType="Self.Presenca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Professor" EntityType="Self.Professor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NomeProfessor" EntityType="Self.NomeProfessor" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NomeProfessor].[ID] AS [ID], 
+    [NomeProfessor].[Curso] AS [Curso], 
+    [NomeProfessor].[DataInicio] AS [DataInicio], 
+    [NomeProfessor].[Duracao] AS [Duracao], 
+    [NomeProfessor].[TipoCurso] AS [TipoCurso], 
+    [NomeProfessor].[Nome] AS [Nome]
+    FROM [dbo].[NomeProfessor] AS [NomeProfessor]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Aluno_Curso" Association="Self.FK_Aluno_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Professor" Association="Self.FK_Curso_Professor">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Materia_Curso" Association="Self.FK_Materia_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="Materia" EntitySet="Materia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Materia_Professor" Association="Self.FK_Materia_Professor">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="Materia" EntitySet="Materia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Presenca_Aluno" Association="Self.FK_Presenca_Aluno">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="Presenca" EntitySet="Presenca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Presenca_Aula" Association="Self.FK_Presenca_Aula">
+      <End Role="Aula" EntitySet="Aula" />
+      <End Role="Presenca" EntitySet="Presenca" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

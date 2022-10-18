@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClassMarkModelStoreContainer" CdmEntityContainer="ClassMarkEntities">
+    <EntitySetMapping Name="Aluno">
+      <EntityTypeMapping TypeName="ClassMarkModel.Aluno">
+        <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DataIngresso" ColumnName="DataIngresso" />
+          <ScalarProperty Name="IDCurso" ColumnName="IDCurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aula">
+      <EntityTypeMapping TypeName="ClassMarkModel.Aula">
+        <MappingFragment StoreEntitySet="Aula">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDMateria" ColumnName="IDMateria" />
+          <ScalarProperty Name="DataAula" ColumnName="DataAula" />
+          <ScalarProperty Name="HorarioInicio" ColumnName="HorarioInicio" />
+          <ScalarProperty Name="HorarioFim" ColumnName="HorarioFim" />
+          <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curso">
+      <EntityTypeMapping TypeName="ClassMarkModel.Curso">
+        <MappingFragment StoreEntitySet="Curso">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="Duracao" ColumnName="Duracao" />
+          <ScalarProperty Name="IDCoordenador" ColumnName="IDCoordenador" />
+          <ScalarProperty Name="TipoCurso" ColumnName="TipoCurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materia">
+      <EntityTypeMapping TypeName="ClassMarkModel.Materia">
+        <MappingFragment StoreEntitySet="Materia">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IDCurso" ColumnName="IDCurso" />
+          <ScalarProperty Name="AnoCurso" ColumnName="AnoCurso" />
+          <ScalarProperty Name="IDProfessor" ColumnName="IDProfessor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Presenca">
+      <EntityTypeMapping TypeName="ClassMarkModel.Presenca">
+        <MappingFragment StoreEntitySet="Presenca">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDAluno" ColumnName="IDAluno" />
+          <ScalarProperty Name="IDAula" ColumnName="IDAula" />
+          <ScalarProperty Name="StatusPresenca" ColumnName="StatusPresenca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professor">
+      <EntityTypeMapping TypeName="ClassMarkModel.Professor">
+        <MappingFragment StoreEntitySet="Professor">
+          <ScalarProperty Name="Coordenador" ColumnName="Coordenador" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DataIngresso" ColumnName="DataIngresso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NomeProfessor">
+      <EntityTypeMapping TypeName="ClassMarkModel.NomeProfessor">
+        <MappingFragment StoreEntitySet="NomeProfessor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TipoCurso" ColumnName="TipoCurso" />
+          <ScalarProperty Name="Duracao" ColumnName="Duracao" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="Curso" ColumnName="Curso" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

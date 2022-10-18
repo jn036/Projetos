@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D644BFE-C362-475D-A84C-6A47FD67FE31}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SGP.View</RootNamespace>
+    <AssemblyName>SGP.View</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SGP.View.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroCliente.Designer.cs">
+      <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroColaborador.designer.cs">
+      <DependentUpon>CadastroColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarCliente.Designer.cs">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarEntrada.Designer.cs">
+      <DependentUpon>ConsultarEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarReceita.Designer.cs">
+      <DependentUpon>ConsultarReceita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioAjuste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAjuste.Designer.cs">
+      <DependentUpon>FormularioAjuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPedido.Designer.cs">
+      <DependentUpon>FormularioPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor.Designer.cs">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFrota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFrota.designer.cs">
+      <DependentUpon>CadastroFrota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connected Services\Correios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarFornecedor.Designer.cs">
+      <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarFrota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarFrota.Designer.cs">
+      <DependentUpon>ConsultarFrota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarColaborador.Designer.cs">
+      <DependentUpon>ConsultarColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioEntrada.Designer.cs">
+      <DependentUpon>FormularioEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroReceita.Designer.cs">
+      <DependentUpon>CadastroReceita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioProducao.designer.cs">
+      <DependentUpon>FormularioProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRecuperaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecuperaSenha.Designer.cs">
+      <DependentUpon>FrmRecuperaSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioColaborador.Designer.cs">
+      <DependentUpon>RelatorioColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioEstoque.Designer.cs">
+      <DependentUpon>RelatorioEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioPedido.Designer.cs">
+      <DependentUpon>RelatorioPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioProducao.Designer.cs">
+      <DependentUpon>RelatorioProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioReceita.Designer.cs">
+      <DependentUpon>RelatorioReceita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioColaborador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioColaborador.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioEstoque.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioEstoque.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFornecedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioFornecedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFrota.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioFrota.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioPedido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioProducao.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioProducao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioReceita.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioReceita.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelaProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaProducao.Designer.cs">
+      <DependentUpon>TelaProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaADM.Designer.cs">
+      <DependentUpon>TelaADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioFornecedor.Designer.cs">
+      <DependentUpon>RelatorioFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioFrota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioFrota.Designer.cs">
+      <DependentUpon>RelatorioFrota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioCliente.Designer.cs">
+      <DependentUpon>RelatorioCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetCliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetColaborador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetColaborador.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetEntrada.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetEntrada.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetFornecedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetFornecedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetFrota.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetFrota.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsinaDataSetReceita.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsinaDataSetReceita.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CadastroCliente.resx">
+      <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroReceita.resx">
+      <DependentUpon>CadastroReceita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarCliente.resx">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarEntrada.resx">
+      <DependentUpon>ConsultarEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarReceita.resx">
+      <DependentUpon>ConsultarReceita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAjuste.resx">
+      <DependentUpon>FormularioAjuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPedido.resx">
+      <DependentUpon>FormularioPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFornecedor.resx">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFrota.resx">
+      <DependentUpon>CadastroFrota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroColaborador.resx">
+      <DependentUpon>CadastroColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarFornecedor.resx">
+      <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarFrota.resx">
+      <DependentUpon>ConsultarFrota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarColaborador.resx">
+      <DependentUpon>ConsultarColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioEntrada.resx">
+      <DependentUpon>FormularioEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioProducao.resx">
+      <DependentUpon>FormularioProducao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecuperaSenha.resx">
+      <DependentUpon>FrmRecuperaSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioColaborador.resx">
+      <DependentUpon>RelatorioColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioEstoque.resx">
+      <DependentUpon>RelatorioEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioFornecedor.resx">
+      <DependentUpon>RelatorioFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioPedido.resx">
+      <DependentUpon>RelatorioPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioProducao.resx">
+      <DependentUpon>RelatorioProducao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioReceita.resx">
+      <DependentUpon>RelatorioReceita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioCliente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioColaborador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioColaborador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioEstoque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioEstoque.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioFornecedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioFornecedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioFrota.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioFrota.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioPedido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioProducao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioProducao.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioReceita.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioReceita.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaProducao.resx">
+      <DependentUpon>TelaProducao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaADM.resx">
+      <DependentUpon>TelaADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioFrota.resx">
+      <DependentUpon>RelatorioFrota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioCliente.resx">
+      <DependentUpon>RelatorioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Connected Services\Correios\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\Correios\SGP.View.Correios.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaDataAtualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.consultaSRO_NEWResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Correios\SGP.View.Correios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UsinaDataSetCliente.xsc">
+      <DependentUpon>UsinaDataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetCliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetCliente.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetCliente.xss">
+      <DependentUpon>UsinaDataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetColaborador.xsc">
+      <DependentUpon>UsinaDataSetColaborador.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetColaborador.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetColaborador.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetColaborador.xss">
+      <DependentUpon>UsinaDataSetColaborador.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetEntrada.xsc">
+      <DependentUpon>UsinaDataSetEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetEntrada.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetEntrada.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetEntrada.xss">
+      <DependentUpon>UsinaDataSetEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetFornecedor.xsc">
+      <DependentUpon>UsinaDataSetFornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetFornecedor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetFornecedor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetFornecedor.xss">
+      <DependentUpon>UsinaDataSetFornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetFrota.xsc">
+      <DependentUpon>UsinaDataSetFrota.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetFrota.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetFrota.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetFrota.xss">
+      <DependentUpon>UsinaDataSetFrota.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetReceita.xsc">
+      <DependentUpon>UsinaDataSetReceita.xsd</DependentUpon>
+    </None>
+    <None Include="UsinaDataSetReceita.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsinaDataSetReceita.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsinaDataSetReceita.xss">
+      <DependentUpon>UsinaDataSetReceita.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SGP.Control\SGP.Control.csproj">
+      <Project>{ef2d11c7-e71e-489d-afdd-df3d1acb5a3b}</Project>
+      <Name>SGP.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SGP.Model\SGP.Model.csproj">
+      <Project>{87d4e139-28d8-4234-b5d9-b8b46fd02db3}</Project>
+      <Name>SGP.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Correios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Correios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Correios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Correios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usina.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usina caminhao.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExemploConexao.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caricatura.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

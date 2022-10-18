@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UsinaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AJUSTE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="minimoAreia" Type="int" />
+          <Property Name="minimoBrita0" Type="int" />
+          <Property Name="minimoBrita1" Type="int" />
+          <Property Name="minimoCimento" Type="int" />
+          <Property Name="minimoaditivo" Type="int" />
+          <Property Name="tempoAreia" Type="int" />
+          <Property Name="tempoBrita0" Type="int" />
+          <Property Name="tempoBrita1" Type="int" />
+          <Property Name="tempoCimento" Type="int" />
+          <Property Name="tempoAditivo" Type="int" />
+          <Property Name="tempoAgua" Type="int" />
+          <Property Name="dataAjuste" Type="date" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataCadastro" Type="date" Nullable="false" />
+          <Property Name="Imagem" Type="image" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Logradouro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" MaxLength="13" />
+          <Property Name="Celular" Type="varchar" MaxLength="14" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COLABORADOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Funcao" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="DataCadastro" Type="date" Nullable="false" />
+          <Property Name="Imagem" Type="image" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Logradouro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" MaxLength="13" />
+          <Property Name="Celular" Type="varchar" MaxLength="14" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ENTRADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDFornecedor" Type="int" Nullable="false" />
+          <Property Name="IDColaborador" Type="int" Nullable="false" />
+          <Property Name="Insumo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DataEntrada" Type="date" Nullable="false" />
+          <Property Name="NF" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="QtdEntrada" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTOQUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Agr1Est" Type="float" Nullable="false" />
+          <Property Name="Agr2Est" Type="float" Nullable="false" />
+          <Property Name="Agr3Est" Type="float" Nullable="false" />
+          <Property Name="Cim1Est" Type="float" Nullable="false" />
+          <Property Name="Adit1Est" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataCadastro" Type="date" Nullable="false" />
+          <Property Name="Imagem" Type="image" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CEP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Logradouro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" MaxLength="13" />
+          <Property Name="Celular" Type="varchar" MaxLength="14" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FROTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Placa" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tara" Type="float" Nullable="false" />
+          <Property Name="PesoBruto" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="IDCaminhao" Type="int" Nullable="false" />
+          <Property Name="IDColaborador" Type="int" Nullable="false" />
+          <Property Name="IDReceita" Type="int" Nullable="false" />
+          <Property Name="IDOperaçao" Type="int" />
+          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="PesagemCaminhao" Type="float" />
+          <Property Name="Quantidade" Type="float" />
+          <Property Name="Controle" Type="bit" />
+        </EntityType>
+        <EntityType Name="PRODUCAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPedido" Type="int" Nullable="false" />
+          <Property Name="DataProducao" Type="date" />
+          <Property Name="Quantidade" Type="float" />
+          <Property Name="Agr1Real" Type="float" />
+          <Property Name="Agr1Prog" Type="float" />
+          <Property Name="Agr2Real" Type="float" />
+          <Property Name="Agr2Prog" Type="float" />
+          <Property Name="Agr3Real" Type="float" />
+          <Property Name="Agr3Prog" Type="float" />
+          <Property Name="CimReal" Type="float" />
+          <Property Name="CimProg" Type="float" />
+          <Property Name="AguaReal" Type="float" />
+          <Property Name="AguaProg" Type="float" />
+          <Property Name="AditReal" Type="float" />
+          <Property Name="AditProg" Type="float" />
+        </EntityType>
+        <EntityType Name="RECEITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Agr1Prog" Type="float" />
+          <Property Name="Agr2Prog" Type="float" />
+          <Property Name="Agr3Prog" Type="float" />
+          <Property Name="Cim1Prog" Type="float" />
+          <Property Name="Agua1Prog" Type="float" />
+          <Property Name="Adit1Prog" Type="float" />
+          <Property Name="Total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Funcao" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ENTRADA_COLABORADOR">
+          <End Role="COLABORADOR" Type="Self.COLABORADOR" Multiplicity="1" />
+          <End Role="ENTRADA" Type="Self.ENTRADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLABORADOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ENTRADA">
+              <PropertyRef Name="IDColaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ENTRADA_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="ENTRADA" Type="Self.ENTRADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ENTRADA">
+              <PropertyRef Name="IDFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_COLABORADOR">
+          <End Role="COLABORADOR" Type="Self.COLABORADOR" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLABORADOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDColaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_FROTA">
+          <End Role="FROTA" Type="Self.FROTA" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FROTA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDCaminhao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_RECEITA">
+          <End Role="RECEITA" Type="Self.RECEITA" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECEITA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDReceita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCAO_PEDIDO">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+          <End Role="PRODUCAO" Type="Self.PRODUCAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCAO">
+              <PropertyRef Name="IDPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UsinaModelStoreContainer">
+          <EntitySet Name="AJUSTE" EntityType="Self.AJUSTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COLABORADOR" EntityType="Self.COLABORADOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ENTRADA" EntityType="Self.ENTRADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTOQUE" EntityType="Self.ESTOQUE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORNECEDOR" EntityType="Self.FORNECEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FROTA" EntityType="Self.FROTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCAO" EntityType="Self.PRODUCAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECEITA" EntityType="Self.RECEITA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ENTRADA_COLABORADOR" Association="Self.FK_ENTRADA_COLABORADOR">
+            <End Role="COLABORADOR" EntitySet="COLABORADOR" />
+            <End Role="ENTRADA" EntitySet="ENTRADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ENTRADA_FORNECEDOR" Association="Self.FK_ENTRADA_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="ENTRADA" EntitySet="ENTRADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_CLIENTE" Association="Self.FK_PEDIDO_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_COLABORADOR" Association="Self.FK_PEDIDO_COLABORADOR">
+            <End Role="COLABORADOR" EntitySet="COLABORADOR" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_FROTA" Association="Self.FK_PEDIDO_FROTA">
+            <End Role="FROTA" EntitySet="FROTA" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_RECEITA" Association="Self.FK_PEDIDO_RECEITA">
+            <End Role="RECEITA" EntitySet="RECEITA" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCAO_PEDIDO" Association="Self.FK_PRODUCAO_PEDIDO">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="PRODUCAO" EntitySet="PRODUCAO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UsinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Logradouro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDO_CLIENTE" FromRole="CLIENTE" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="COLABORADOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Funcao" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Logradouro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ENTRADA" Relationship="Self.FK_ENTRADA_COLABORADOR" FromRole="COLABORADOR" ToRole="ENTRADA" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDO_COLABORADOR" FromRole="COLABORADOR" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="ENTRADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDFornecedor" Type="Int32" Nullable="false" />
+          <Property Name="IDColaborador" Type="Int32" Nullable="false" />
+          <Property Name="Insumo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataEntrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QtdEntrada" Type="Double" Nullable="false" />
+          <NavigationProperty Name="COLABORADOR" Relationship="Self.FK_ENTRADA_COLABORADOR" FromRole="ENTRADA" ToRole="COLABORADOR" />
+          <NavigationProperty Name="FORNECEDOR" Relationship="Self.FK_ENTRADA_FORNECEDOR" FromRole="ENTRADA" ToRole="FORNECEDOR" />
+        </EntityType>
+        <EntityType Name="ESTOQUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Agr1Est" Type="Double" Nullable="false" />
+          <Property Name="Agr2Est" Type="Double" Nullable="false" />
+          <Property Name="Agr3Est" Type="Double" Nullable="false" />
+          <Property Name="Cim1Est" Type="Double" Nullable="false" />
+          <Property Name="Adit1Est" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Logradouro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeLogradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ENTRADA" Relationship="Self.FK_ENTRADA_FORNECEDOR" FromRole="FORNECEDOR" ToRole="ENTRADA" />
+        </EntityType>
+        <EntityType Name="FROTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Placa" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tara" Type="Double" Nullable="false" />
+          <Property Name="PesoBruto" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PEDIDO" Relationship="UsinaModel.FK_PEDIDO_FROTA" FromRole="FROTA" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="IDCaminhao" Type="Int32" Nullable="false" />
+          <Property Name="IDColaborador" Type="Int32" Nullable="false" />
+          <Property Name="IDReceita" Type="Int32" Nullable="false" />
+          <Property Name="IDOperaçao" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PesagemCaminhao" Type="Double" />
+          <Property Name="Quantidade" Type="Double" />
+          <Property Name="Controle" Type="Boolean" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_PEDIDO_CLIENTE" FromRole="PEDIDO" ToRole="CLIENTE" />
+          <NavigationProperty Name="COLABORADOR" Relationship="Self.FK_PEDIDO_COLABORADOR" FromRole="PEDIDO" ToRole="COLABORADOR" />
+          <NavigationProperty Name="RECEITA" Relationship="Self.FK_PEDIDO_RECEITA" FromRole="PEDIDO" ToRole="RECEITA" />
+          <NavigationProperty Name="PRODUCAO" Relationship="Self.FK_PRODUCAO_PEDIDO" FromRole="PEDIDO" ToRole="PRODUCAO" />
+          <NavigationProperty Name="FROTA" Relationship="UsinaModel.FK_PEDIDO_FROTA" FromRole="PEDIDO" ToRole="FROTA" />
+        </EntityType>
+        <EntityType Name="PRODUCAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPedido" Type="Int32" Nullable="false" />
+          <Property Name="DataProducao" Type="DateTime" Precision="0" />
+          <Property Name="Quantidade" Type="Double" />
+          <Property Name="Agr1Real" Type="Double" />
+          <Property Name="Agr1Prog" Type="Double" />
+          <Property Name="Agr2Real" Type="Double" />
+          <Property Name="Agr2Prog" Type="Double" />
+          <Property Name="Agr3Real" Type="Double" />
+          <Property Name="Agr3Prog" Type="Double" />
+          <Property Name="CimReal" Type="Double" />
+          <Property Name="CimProg" Type="Double" />
+          <Property Name="AguaReal" Type="Double" />
+          <Property Name="AguaProg" Type="Double" />
+          <Property Name="AditReal" Type="Double" />
+          <Property Name="AditProg" Type="Double" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PRODUCAO_PEDIDO" FromRole="PRODUCAO" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="RECEITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Agr1Prog" Type="Double" />
+          <Property Name="Agr2Prog" Type="Double" />
+          <Property Name="Agr3Prog" Type="Double" />
+          <Property Name="Cim1Prog" Type="Double" />
+          <Property Name="Agua1Prog" Type="Double" />
+          <Property Name="Adit1Prog" Type="Double" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDO_RECEITA" FromRole="RECEITA" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Funcao" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PEDIDO_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ENTRADA_COLABORADOR">
+          <End Role="COLABORADOR" Type="Self.COLABORADOR" Multiplicity="1" />
+          <End Role="ENTRADA" Type="Self.ENTRADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLABORADOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ENTRADA">
+              <PropertyRef Name="IDColaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_COLABORADOR">
+          <End Role="COLABORADOR" Type="Self.COLABORADOR" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLABORADOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDColaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ENTRADA_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="ENTRADA" Type="Self.ENTRADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ENTRADA">
+              <PropertyRef Name="IDFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_RECEITA">
+          <End Role="RECEITA" Type="Self.RECEITA" Multiplicity="1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECEITA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDReceita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCAO_PEDIDO">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+          <End Role="PRODUCAO" Type="Self.PRODUCAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCAO">
+              <PropertyRef Name="IDPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UsinaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="COLABORADOR" EntityType="Self.COLABORADOR" />
+          <EntitySet Name="ENTRADA" EntityType="Self.ENTRADA" />
+          <EntitySet Name="ESTOQUE" EntityType="Self.ESTOQUE" />
+          <EntitySet Name="FORNECEDOR" EntityType="Self.FORNECEDOR" />
+          <EntitySet Name="FROTA" EntityType="Self.FROTA" />
+          <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" />
+          <EntitySet Name="PRODUCAO" EntityType="Self.PRODUCAO" />
+          <EntitySet Name="RECEITA" EntityType="Self.RECEITA" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <AssociationSet Name="FK_PEDIDO_CLIENTE" Association="Self.FK_PEDIDO_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ENTRADA_COLABORADOR" Association="Self.FK_ENTRADA_COLABORADOR">
+            <End Role="COLABORADOR" EntitySet="COLABORADOR" />
+            <End Role="ENTRADA" EntitySet="ENTRADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_COLABORADOR" Association="Self.FK_PEDIDO_COLABORADOR">
+            <End Role="COLABORADOR" EntitySet="COLABORADOR" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ENTRADA_FORNECEDOR" Association="Self.FK_ENTRADA_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="ENTRADA" EntitySet="ENTRADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_RECEITA" Association="Self.FK_PEDIDO_RECEITA">
+            <End Role="RECEITA" EntitySet="RECEITA" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCAO_PEDIDO" Association="Self.FK_PRODUCAO_PEDIDO">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="PRODUCAO" EntitySet="PRODUCAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_FROTA" Association="UsinaModel.FK_PEDIDO_FROTA">
+            <End Role="FROTA" EntitySet="FROTA" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <EntitySet Name="AJUSTE" EntityType="UsinaModel.AJUSTE" />
+          <EntitySet Name="sysdiagrams" EntityType="UsinaModel.sysdiagrams" />
+        </EntityContainer>
+        <Association Name="FK_PEDIDO_FROTA">
+          <End Type="UsinaModel.FROTA" Role="FROTA" Multiplicity="1" />
+          <End Type="UsinaModel.PEDIDO" Role="PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FROTA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="IDCaminhao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AJUSTE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="minimoAreia" Type="Int32" />
+          <Property Name="minimoBrita0" Type="Int32" />
+          <Property Name="minimoBrita1" Type="Int32" />
+          <Property Name="minimoCimento" Type="Int32" />
+          <Property Name="minimoaditivo" Type="Int32" />
+          <Property Name="tempoAreia" Type="Int32" />
+          <Property Name="tempoBrita0" Type="Int32" />
+          <Property Name="tempoBrita1" Type="Int32" />
+          <Property Name="tempoCimento" Type="Int32" />
+          <Property Name="tempoAditivo" Type="Int32" />
+          <Property Name="tempoAgua" Type="Int32" />
+          <Property Name="dataAjuste" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UsinaModelStoreContainer" CdmEntityContainer="UsinaEntities">
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="UsinaModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="NomeLogradouro" ColumnName="NomeLogradouro" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COLABORADOR">
+            <EntityTypeMapping TypeName="UsinaModel.COLABORADOR">
+              <MappingFragment StoreEntitySet="COLABORADOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Funcao" ColumnName="Funcao" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="NomeLogradouro" ColumnName="NomeLogradouro" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENTRADA">
+            <EntityTypeMapping TypeName="UsinaModel.ENTRADA">
+              <MappingFragment StoreEntitySet="ENTRADA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDFornecedor" ColumnName="IDFornecedor" />
+                <ScalarProperty Name="IDColaborador" ColumnName="IDColaborador" />
+                <ScalarProperty Name="Insumo" ColumnName="Insumo" />
+                <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
+                <ScalarProperty Name="NF" ColumnName="NF" />
+                <ScalarProperty Name="QtdEntrada" ColumnName="QtdEntrada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTOQUE">
+            <EntityTypeMapping TypeName="UsinaModel.ESTOQUE">
+              <MappingFragment StoreEntitySet="ESTOQUE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Agr1Est" ColumnName="Agr1Est" />
+                <ScalarProperty Name="Agr2Est" ColumnName="Agr2Est" />
+                <ScalarProperty Name="Agr3Est" ColumnName="Agr3Est" />
+                <ScalarProperty Name="Cim1Est" ColumnName="Cim1Est" />
+                <ScalarProperty Name="Adit1Est" ColumnName="Adit1Est" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORNECEDOR">
+            <EntityTypeMapping TypeName="UsinaModel.FORNECEDOR">
+              <MappingFragment StoreEntitySet="FORNECEDOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="NomeLogradouro" ColumnName="NomeLogradouro" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FROTA">
+            <EntityTypeMapping TypeName="UsinaModel.FROTA">
+              <MappingFragment StoreEntitySet="FROTA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Tara" ColumnName="Tara" />
+                <ScalarProperty Name="PesoBruto" ColumnName="PesoBruto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO">
+            <EntityTypeMapping TypeName="UsinaModel.PEDIDO">
+              <MappingFragment StoreEntitySet="PEDIDO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDCaminhao" ColumnName="IDCaminhao" />
+                <ScalarProperty Name="IDColaborador" ColumnName="IDColaborador" />
+                <ScalarProperty Name="IDReceita" ColumnName="IDReceita" />
+                <ScalarProperty Name="IDOperaçao" ColumnName="IDOperaçao" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="PesagemCaminhao" ColumnName="PesagemCaminhao" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Controle" ColumnName="Controle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCAO">
+            <EntityTypeMapping TypeName="UsinaModel.PRODUCAO">
+              <MappingFragment StoreEntitySet="PRODUCAO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPedido" ColumnName="IDPedido" />
+                <ScalarProperty Name="DataProducao" ColumnName="DataProducao" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="Agr1Real" ColumnName="Agr1Real" />
+                <ScalarProperty Name="Agr1Prog" ColumnName="Agr1Prog" />
+                <ScalarProperty Name="Agr2Real" ColumnName="Agr2Real" />
+                <ScalarProperty Name="Agr2Prog" ColumnName="Agr2Prog" />
+                <ScalarProperty Name="Agr3Real" ColumnName="Agr3Real" />
+                <ScalarProperty Name="Agr3Prog" ColumnName="Agr3Prog" />
+                <ScalarProperty Name="CimReal" ColumnName="CimReal" />
+                <ScalarProperty Name="CimProg" ColumnName="CimProg" />
+                <ScalarProperty Name="AguaReal" ColumnName="AguaReal" />
+                <ScalarProperty Name="AguaProg" ColumnName="AguaProg" />
+                <ScalarProperty Name="AditReal" ColumnName="AditReal" />
+                <ScalarProperty Name="AditProg" ColumnName="AditProg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECEITA">
+            <EntityTypeMapping TypeName="UsinaModel.RECEITA">
+              <MappingFragment StoreEntitySet="RECEITA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Agr1Prog" ColumnName="Agr1Prog" />
+                <ScalarProperty Name="Agr2Prog" ColumnName="Agr2Prog" />
+                <ScalarProperty Name="Agr3Prog" ColumnName="Agr3Prog" />
+                <ScalarProperty Name="Cim1Prog" ColumnName="Cim1Prog" />
+                <ScalarProperty Name="Agua1Prog" ColumnName="Agua1Prog" />
+                <ScalarProperty Name="Adit1Prog" ColumnName="Adit1Prog" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="UsinaModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Funcao" ColumnName="Funcao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AJUSTE">
+            <EntityTypeMapping TypeName="UsinaModel.AJUSTE">
+              <MappingFragment StoreEntitySet="AJUSTE">
+                <ScalarProperty Name="dataAjuste" ColumnName="dataAjuste" />
+                <ScalarProperty Name="tempoAgua" ColumnName="tempoAgua" />
+                <ScalarProperty Name="tempoAditivo" ColumnName="tempoAditivo" />
+                <ScalarProperty Name="tempoCimento" ColumnName="tempoCimento" />
+                <ScalarProperty Name="tempoBrita1" ColumnName="tempoBrita1" />
+                <ScalarProperty Name="tempoBrita0" ColumnName="tempoBrita0" />
+                <ScalarProperty Name="tempoAreia" ColumnName="tempoAreia" />
+                <ScalarProperty Name="minimoaditivo" ColumnName="minimoaditivo" />
+                <ScalarProperty Name="minimoCimento" ColumnName="minimoCimento" />
+                <ScalarProperty Name="minimoBrita1" ColumnName="minimoBrita1" />
+                <ScalarProperty Name="minimoBrita0" ColumnName="minimoBrita0" />
+                <ScalarProperty Name="minimoAreia" ColumnName="minimoAreia" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="UsinaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

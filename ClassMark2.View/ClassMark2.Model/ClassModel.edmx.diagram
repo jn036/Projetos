@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4fdb3ab27e0741be949803cdd7c4726c" Name="Diagram1">
+        <EntityTypeShape EntityType="ClassMarkModel.Aluno" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClassMarkModel.Aula" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClassMarkModel.Curso" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClassMarkModel.Materia" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClassMarkModel.Presenca" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClassMarkModel.Professor" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="ClassMarkModel.FK_Aluno_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ClassMarkModel.FK_Presenca_Aluno" ManuallyRouted="false" />
+        <AssociationConnector Association="ClassMarkModel.FK_Presenca_Aula" ManuallyRouted="false" />
+        <AssociationConnector Association="ClassMarkModel.FK_Curso_Professor" ManuallyRouted="false" />
+        <AssociationConnector Association="ClassMarkModel.FK_Materia_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ClassMarkModel.FK_Materia_Professor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ClassMarkModel.NomeProfessor" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
